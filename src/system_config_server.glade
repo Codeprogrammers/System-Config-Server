@@ -9,13 +9,14 @@
     <property name="title" translatable="yes">system-config-server</property>
     <property name="default_width">500</property>
     <property name="default_height">400</property>
+    <property name="icon_name">network-server</property>
     <child>
-      <object class="GtkBox" id="box1">
+      <object class="GtkBox" id="content_control">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkMenuBar" id="menubar1">
+          <object class="GtkMenuBar" id="main_menu">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="ubuntu_local">True</property>
@@ -191,18 +192,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="grid1">
+          <object class="GtkGrid" id="service_divider">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="n_rows">1</property>
             <property name="n_columns">2</property>
             <child>
-              <placeholder/>
-            </child>
-            <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow1">
+              <object class="GtkScrolledWindow" id="service_selector">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="vexpand">True</property>
                 <property name="shadow_type">in</property>
                 <property name="min_content_width">200</property>
                 <child>
@@ -210,13 +209,36 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <placeholder/>
+                      <object class="GtkImage" id="image1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="vexpand">True</property>
+                        <property name="stock">gtk-media-forward</property>
+                      </object>
                     </child>
                   </object>
                 </child>
               </object>
               <packing>
                 <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="service_viewer">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
                 <property name="top_attach">0</property>
                 <property name="width">1</property>
                 <property name="height">1</property>
