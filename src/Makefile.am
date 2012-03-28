@@ -4,7 +4,7 @@
 
 
 uidir = $(datadir)/system_config_server/ui
-ui_DATA = system_config_server.ui
+ui_DATA = system_config_server.glade
 
 
 AM_CPPFLAGS = \
