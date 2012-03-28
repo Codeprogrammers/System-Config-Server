@@ -20,12 +20,9 @@ AM_CFLAGS =\
 bin_PROGRAMS = system_config_server
 
 system_config_server_SOURCES = \
-	main.c \
-	system-config-server.h \
-	system-config-server.c	
+	main.cc
 
-system_config_server_LDFLAGS = \
-	-Wl,--export-dynamic
+system_config_server_LDFLAGS = 
 
 system_config_server_LDADD = $(SYSTEM_CONFIG_SERVER_LIBS)
 
