@@ -20,7 +20,9 @@ AM_CFLAGS =\
 bin_PROGRAMS = system_config_server
 
 system_config_server_SOURCES = \
-	main.cc
+	main.cc \
+	module_subsystem/service_module_main.cc \
+	module_subsystem/service_module_main.h
 
 system_config_server_LDFLAGS = 
 
