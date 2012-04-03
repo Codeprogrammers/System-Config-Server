@@ -38,7 +38,9 @@ Requirements:
 *make
 *glib
 *gtk-dev
-*gcc
+*g++
+*gtkmm
+*libxml++
 
 ######
 Notes:

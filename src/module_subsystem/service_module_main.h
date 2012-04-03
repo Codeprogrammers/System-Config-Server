@@ -2,6 +2,7 @@
 #define SERVICE_MODULE_H
 
 #include <gtkmm.h>
+#include <libxml++/libxml++.h>
 #include <iostream>
 
 class service_module
