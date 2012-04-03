@@ -32,7 +32,7 @@ system-config-server is free software: you can redistribute it and/or modify it
 /* For testing propose use the local (not installed) ui file */
 /* #define UI_FILE PACKAGE_DATA_DIR"/system_config_server/ui/system_config_server.ui" */
 //#define UI_FILE "../src/system_config_server.glade"
-#define UI_FILE "/home/brad/dev/System-Config-Server/src/system_config_server.glade"
+#define UI_FILE "/home/brad/dev/System-Config-Server/src/glade_resources/system_config_server.glade"
 
    
 int
