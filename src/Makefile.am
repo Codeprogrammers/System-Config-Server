@@ -4,7 +4,8 @@
 
 
 uidir = $(datadir)/system_config_server/ui
-ui_DATA = glade_resources/system_config_server.glade
+ui_DATA = glade_resources/system_config_server.glade \
+	glade_resources/about_window.glade
 
 
 AM_CPPFLAGS = \
