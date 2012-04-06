@@ -1,8 +1,9 @@
-#include "service_module_main.h"
+#include "ServiceModuleMain.h"
+#include <gtkmm.h>
 
 service_module::service_module()
 {
-	printf("Service Module Default Constructor STUB!\n");
+	g_message("Service Module Default Constructor STUB!\n");
 }
 
 //@Loads the Glade file from the specified location
@@ -12,5 +13,5 @@ service_module::service_module()
 //@post:gladeGUI is linked to the external .glade file
 void service_module::LoadGuiGlade()
 {
-	printf("Service Module - LoadGuiGlade() Stub\n");
+	g_message("Service Module - LoadGuiGlade() Stub\n");
 }

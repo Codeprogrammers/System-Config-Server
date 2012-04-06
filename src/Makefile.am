@@ -4,8 +4,8 @@
 
 
 uidir = $(datadir)/system_config_server/ui
-ui_DATA = glade_resources/system_config_server.glade \
-	glade_resources/about_window.glade
+ui_DATA = GladeResources/Main.glade \
+	GladeResources/AboutWindow.glade
 
 
 AM_CPPFLAGS = \
@@ -22,8 +22,12 @@ bin_PROGRAMS = system_config_server
 
 system_config_server_SOURCES = \
 	main.cc \
-	module_subsystem/service_module_main.cc \
-	module_subsystem/service_module_main.h
+	ModuleSubsystem/ServiceModuleMain.h \
+	ModuleSubsystem/ServiceModuleMain.cc \
+	viewcontrollers/GladeViewController.cc \
+	viewcontrollers/GladeViewController.h \
+	viewcontrollers/AboutWindowViewController/AboutWindowViewController.cc \
+	viewcontrollers/AboutWindowViewController/AboutWindowViewController.h
 
 system_config_server_LDFLAGS = 
 

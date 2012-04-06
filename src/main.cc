@@ -21,6 +21,7 @@ system-config-server is free software: you can redistribute it and/or modify it
 #include <iostream>
 
 #include "config.h"
+#include "ModuleSubsystem/ServiceModuleMain.h"
 
 
 #ifdef ENABLE_NLS
@@ -32,11 +33,9 @@ system-config-server is free software: you can redistribute it and/or modify it
 /* For testing propose use the local (not installed) ui file */
 /* #define UI_FILE PACKAGE_DATA_DIR"/system_config_server/ui/system_config_server.ui" */
 //#define UI_FILE "../src/system_config_server.glade"
-#define UI_FILE "/home/brad/dev/System-Config-Server/src/glade_resources/system_config_server.glade"
-
+#define UI_FILE "/home/brad/dev/System-Config-Server/src/GladeResources/Main.glade"
    
-int
-main (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
 	Gtk::Main kit(argc, argv);
 
@@ -45,6 +44,7 @@ main (int argc, char *argv[])
 	Glib::RefPtr<Gtk::Builder> builder;
 	try
 	{
+		g_message("Attempting to load system-config-server.glade");
 		builder = Gtk::Builder::create_from_file(UI_FILE);
 	}
 	catch (const Glib::FileError & ex)
