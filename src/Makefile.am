@@ -4,8 +4,8 @@
 
 
 uidir = $(datadir)/system_config_server/ui
-ui_DATA = GladeResources/Main.glade \
-	GladeResources/AboutWindow.glade
+ui_DATA = GTKBuilderResources/AboutWindow.glade \
+	GTKBuilderResources/Main.glade
 
 
 AM_CPPFLAGS = \
@@ -24,10 +24,10 @@ system_config_server_SOURCES = \
 	main.cc \
 	ModuleSubsystem/ServiceModuleMain.h \
 	ModuleSubsystem/ServiceModuleMain.cc \
-	viewcontrollers/GladeViewController.cc \
-	viewcontrollers/GladeViewController.h \
 	viewcontrollers/AboutWindowViewController/AboutWindowViewController.cc \
-	viewcontrollers/AboutWindowViewController/AboutWindowViewController.h
+	viewcontrollers/AboutWindowViewController/AboutWindowViewController.h \
+	viewcontrollers/GTKBuilderViewController.cc \
+	viewcontrollers/GTKBuilderViewController.h
 
 system_config_server_LDFLAGS = 
 

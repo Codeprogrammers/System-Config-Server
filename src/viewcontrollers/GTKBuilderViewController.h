@@ -17,10 +17,10 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.";
  */
 
-#ifndef _GLADEVIEWCONTROLLER_H_
-#define _GLADEVIEWCONTROLLER_H_
+#ifndef _GTKBUILDERVIEWCONTROLLER_H_
+#define _GTKBUILDERVIEWCONTROLLER_H_
 
-class GladeViewController
+class GTKBuilderViewController
 {
 	public:
 
@@ -30,4 +30,4 @@ class GladeViewController
 
 };
 
-#endif // _GLADEVIEWCONTROLLER_H_
+#endif // _GTKBuilderVIEWCONTROLLER_H_
