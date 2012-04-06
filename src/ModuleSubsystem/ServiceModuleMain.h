@@ -18,15 +18,8 @@ class service_module
 			
 			
 	protected:
-			//@Loads the Glade file from the specified location
-			//@then links it to builder variable "gladeGUI".
-			//@Otherwise throw exception
-			//@pre:A module filepath must be provided
-			//@post:gladeGUI is linked to the external .glade file
-			void LoadGuiGlade();
 	
 	private:
-		Glib::RefPtr<Gtk::Builder> gladeGUI;
 		Glib::ustring serviceName;
 };
 #endif

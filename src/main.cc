@@ -21,6 +21,7 @@ system-config-server is free software: you can redistribute it and/or modify it
 #include <iostream>
 
 #include "config.h"
+#include "main.h"
 #include "ModuleSubsystem/ServiceModuleMain.h"
 
 
