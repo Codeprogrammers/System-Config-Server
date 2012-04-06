@@ -17,6 +17,25 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.";
  */
 
+//Dummy UI_FILE definition
+#define UI_FILE "/home/brad/dev/System-Config-Server/src/GTKBuilderResources/Main.glade"
+
 #include "GTKBuilderViewController.h"
 
+GTKBuilderViewController::GTKBuilderViewController()
+{
+	try
+	{
+		gtkBuilder = Gtk::Builder::create_from_file(UI_FILE);
+	}
+	catch (const Glib::FileError & ex)
+	{
+		//std::cerr << ex.what() << std::endl;
+		printf("GTKBUILD File Load FAILURE!!");
+	}
+}
 
+void GTKBuilderViewController::loadBuilderFile()
+{
+	g_message("loadBuilderFile STUB!");
+}

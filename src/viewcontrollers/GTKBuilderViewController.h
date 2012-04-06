@@ -17,17 +17,20 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.";
  */
 
+#include <gtkmm.h>
 #ifndef _GTKBUILDERVIEWCONTROLLER_H_
 #define _GTKBUILDERVIEWCONTROLLER_H_
 
 class GTKBuilderViewController
 {
 	public:
-
+		GTKBuilderViewController();
+		void loadBuilderFile();
 	protected:
-
+		//GString *gtkBuilderFilePath;
+		Glib::RefPtr<Gtk::Builder> gtkBuilder;
 	private:
-
+		
 };
 
 #endif // _GTKBuilderVIEWCONTROLLER_H_

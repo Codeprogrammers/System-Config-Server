@@ -16,6 +16,7 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.";
  */
+
 #include "../GTKBuilderViewController.h"
 #ifndef _ABOUTWINDOWVIEWCONTROLLER_H_
 #define _ABOUTWINDOWVIEWCONTROLLER_H_
