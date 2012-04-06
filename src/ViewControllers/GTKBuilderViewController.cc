@@ -17,20 +17,26 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.";
  */
 
-#include <gtkmm.h>
-#ifndef _GTKBUILDERVIEWCONTROLLER_H_
-#define _GTKBUILDERVIEWCONTROLLER_H_
+//Dummy UI_FILE definition
+#define UI_FILE "/home/brad/dev/System-Config-Server/src/GTKBuilderResources/Main.glade"
 
-class GTKBuilderViewController
+#include "GTKBuilderViewController.h"
+
+GTKBuilderViewController::GTKBuilderViewController()
 {
-	public:
-		GTKBuilderViewController();
-		void loadBuilderFile();
-	protected:
-		//GString *gtkBuilderFilePath;
-		Glib::RefPtr<Gtk::Builder> gtkBuilder;
-	private:
-		
-};
+	gtkBuilderFilePath = UI_FILE;
+	try
+	{
+		gtkBuilder = Gtk::Builder::create_from_file(gtkBuilderFilePath);
+	}
+	catch (const Glib::FileError & ex)
+	{
+		//std::cerr << ex.what() << std::endl;
+		printf("GTKBUILD File Load FAILURE!!");
+	}
+}
 
-#endif // _GTKBuilderVIEWCONTROLLER_H_
+void GTKBuilderViewController::loadBuilderFile()
+{
+	g_message("loadBuilderFile STUB!");
+}

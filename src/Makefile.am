@@ -24,10 +24,10 @@ system_config_server_SOURCES = \
 	main.cc \
 	ModuleSubsystem/ServiceModuleMain.h \
 	ModuleSubsystem/ServiceModuleMain.cc \
-	viewcontrollers/AboutWindowViewController/AboutWindowViewController.cc \
-	viewcontrollers/AboutWindowViewController/AboutWindowViewController.h \
-	viewcontrollers/GTKBuilderViewController.cc \
-	viewcontrollers/GTKBuilderViewController.h
+	ViewControllers/GTKBuilderViewController.cc \
+	ViewControllers/GTKBuilderViewController.h \
+	ViewControllers/AboutWindowViewController/AboutWindowViewController.cc \
+	ViewControllers/AboutWindowViewController/AboutWindowViewController.h
 
 system_config_server_LDFLAGS = 
 

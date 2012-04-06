@@ -22,6 +22,7 @@ system-config-server is free software: you can redistribute it and/or modify it
 
 #include "config.h"
 #include "main.h"
+#include "ViewControllers/GTKBuilderViewController.h"
 #include "ModuleSubsystem/ServiceModuleMain.h"
 
 
