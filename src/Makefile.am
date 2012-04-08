@@ -27,7 +27,9 @@ system_config_server_SOURCES = \
 	ViewControllers/GTKBuilderViewController.cc \
 	ViewControllers/GTKBuilderViewController.h \
 	ViewControllers/AboutWindowViewController/AboutWindowViewController.cc \
-	ViewControllers/AboutWindowViewController/AboutWindowViewController.h
+	ViewControllers/AboutWindowViewController/AboutWindowViewController.h \
+	ViewControllers/RootViewController/RootViewController.cc \
+	ViewControllers/RootViewController/RootViewController.h
 
 system_config_server_LDFLAGS = 
 
