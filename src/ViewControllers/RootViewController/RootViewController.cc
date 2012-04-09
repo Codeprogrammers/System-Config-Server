@@ -20,3 +20,15 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 #include "RootViewController.h"
 
 
+RootViewController::RootViewController()
+{
+	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/GTKBuilderResources/Main.glade";
+	loadBuilderFile ();
+
+	//Now that we have the glade files loaded we can start
+	//assigning widgets to different sections of the GUI
+	mainWindow = 0;
+	gtkBuilder->get_widget("main_window", mainWindow);
+
+
+}

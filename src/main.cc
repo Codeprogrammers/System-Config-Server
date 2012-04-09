@@ -22,7 +22,7 @@ system-config-server is free software: you can redistribute it and/or modify it
 
 #include "config.h"
 #include "main.h"
-#include "ViewControllers/GTKBuilderViewController.h"
+#include "ViewControllers/RootViewController/RootViewController.h"
 #include "ModuleSubsystem/ServiceModuleMain.h"
 
 
@@ -41,26 +41,10 @@ int main (int argc, char *argv[])
 {
 	Gtk::Main kit(argc, argv);
 
-
-	//Load the Glade file and instiate its widgets:
-	Glib::RefPtr<Gtk::Builder> builder;
-	try
+	RootViewController *rootController = new RootViewController();
+	if (rootController->mainWindow)
 	{
-		g_message("Attempting to load system-config-server.glade");
-		builder = Gtk::Builder::create_from_file(UI_FILE);
-	}
-	catch (const Glib::FileError & ex)
-	{
-		std::cerr << ex.what() << std::endl;
-		return 1;
-	}
-	Gtk::Window* main_win = 0;
-	builder->get_widget("main_window", main_win);
-
-
-	if (main_win)
-	{
-		kit.run(*main_win);
+		kit.run(*rootController->mainWindow);
 	}
 	return 0;
 }

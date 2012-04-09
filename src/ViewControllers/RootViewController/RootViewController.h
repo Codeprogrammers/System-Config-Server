@@ -24,7 +24,8 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 class RootViewController: public GTKBuilderViewController 
 {
 public:
-
+	RootViewController();
+	Gtk::Window* mainWindow;
 protected:
 
 private:
