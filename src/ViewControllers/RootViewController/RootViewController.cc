@@ -19,7 +19,6 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 
 #include "RootViewController.h"
 
-
 RootViewController::RootViewController()
 {
 	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/GTKBuilderResources/Main.glade";
@@ -29,6 +28,25 @@ RootViewController::RootViewController()
 	//assigning widgets to different sections of the GUI
 	mainWindow = 0;
 	gtkBuilder->get_widget("main_window", mainWindow);
+	gtkBuilder->get_widget("serviceSelectionGrid", serviceSelectionGrid);
+	gtkBuilder->get_widget("aboutApp", aboutAppMenuAction);
 
 
+}
+
+void RootViewController::setServiceGridSize()
+{
+	
+}
+
+void RootViewController::ConnectSignalHandelers()
+{
+	aboutAppMenuAction->signal_activate().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
+	//aboutAppMenuAction->activate.connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
+	//aboutAppMenuAction.signal_activate ()
+}
+
+void RootViewController::AboutAppClicked()
+{
+	g_message("About Application Stub");
 }
