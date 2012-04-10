@@ -29,7 +29,13 @@ system_config_server_SOURCES = \
 	ViewControllers/AboutWindowViewController/AboutWindowViewController.cc \
 	ViewControllers/AboutWindowViewController/AboutWindowViewController.h \
 	ViewControllers/RootViewController/RootViewController.cc \
-	ViewControllers/RootViewController/RootViewController.h
+	ViewControllers/RootViewController/RootViewController.h \
+	Modules/bind/BindService.cc \
+	Modules/bind/BindService.h \
+	Modules/dhcpd/DhcpdService.cc \
+	Modules/dhcpd/DhcpdService.h \
+	Modules/network/NetworkService.cc \
+	Modules/network/NetworkService.h
 
 system_config_server_LDFLAGS = 
 

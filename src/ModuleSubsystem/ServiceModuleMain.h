@@ -4,8 +4,9 @@
 #include <gtkmm.h>
 #include <libxml++/libxml++.h>
 #include <iostream>
+#include "../ViewControllers/GTKBuilderViewController.h"
 
-class service_module
+class ServiceModule: public GTKBuilderViewController
 {
 	public:
 			//@Creates a simple Instance of Service Module
@@ -14,7 +15,7 @@ class service_module
 			//@pre:A module must be specified (source file)
 			//@post:The module is loaded from the file
 			//@usage: STUB
-			service_module();
+			ServiceModule();
 			
 			
 	protected:
