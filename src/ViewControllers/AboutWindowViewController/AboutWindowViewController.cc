@@ -19,4 +19,12 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 
 #include "AboutWindowViewController.h"
 
+AboutWindowViewController::AboutWindowViewController()
+{
+	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/GTKBuilderResources/AboutWindow.glade";
+	loadBuilderFile ();
 
+	gtkBuilder->get_widget("about_window", mainWindow);
+	mainWindow->show();
+	
+}

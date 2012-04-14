@@ -18,6 +18,7 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  */
 
 #include "RootViewController.h"
+#include "../AboutWindowViewController/AboutWindowViewController.h"
 
 RootViewController::RootViewController()
 {
@@ -30,8 +31,9 @@ RootViewController::RootViewController()
 	gtkBuilder->get_widget("main_window", mainWindow);
 	gtkBuilder->get_widget("serviceSelectionGrid", serviceSelectionGrid);
 	gtkBuilder->get_widget("aboutApp", aboutAppMenuAction);
+	gtkBuilder->get_widget("testButton", testButton);
 
-
+	ConnectSignalHandelers();
 }
 
 void RootViewController::setServiceGridSize()
@@ -41,6 +43,8 @@ void RootViewController::setServiceGridSize()
 
 void RootViewController::ConnectSignalHandelers()
 {
+	g_message("Connect SignalHandlers Called");
+	testButton->signal_clicked().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	aboutAppMenuAction->signal_activate().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	//aboutAppMenuAction->activate.connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	//aboutAppMenuAction.signal_activate ()
@@ -48,5 +52,7 @@ void RootViewController::ConnectSignalHandelers()
 
 void RootViewController::AboutAppClicked()
 {
-	g_message("About Application Stub");
+	g_message("About Application Called");
+	AboutWindowViewController *currentAboutViewController = new AboutWindowViewController();
+
 }

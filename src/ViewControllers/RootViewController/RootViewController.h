@@ -35,6 +35,9 @@ public:
 	Gtk::Window *mainWindow;
 	Gtk::MenuItem *aboutAppMenuAction;
 	Gtk::Grid *serviceSelectionGrid;
+
+	Gtk::Button *testButton;
+	
 	gint *availibleServices;
 protected:
 
