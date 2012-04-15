@@ -47,12 +47,11 @@ void RootViewController::ConnectSignalHandelers()
 	testButton->signal_clicked().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	aboutAppMenuAction->signal_activate().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	//aboutAppMenuAction->activate.connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
-	//aboutAppMenuAction.signal_activate ()
 }
 
 void RootViewController::AboutAppClicked()
 {
 	g_message("About Application Called");
 	AboutWindowViewController *currentAboutViewController = new AboutWindowViewController();
-
+	currentAboutViewController->mainWindow->show();
 }

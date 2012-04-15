@@ -24,7 +24,15 @@ AboutWindowViewController::AboutWindowViewController()
 	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/GTKBuilderResources/AboutWindow.glade";
 	loadBuilderFile ();
 
-	gtkBuilder->get_widget("about_window", mainWindow);
-	mainWindow->show();
-	
+	gtkBuilder->get_widget("aboutWindow", mainWindow);
+}
+void AboutWindowViewController::ConnectSignalHandelers()
+{
+	//mainWindow->signal_response().connect(sigc::mem_fun(CloseClicked));
+	//mainWindow->signal_reponse().connect(sigc::mem_fun(*this, &AboutWindowViewController::CloseClicked));
+}
+
+void AboutWindowViewController::CloseClicked()
+{
+	g_message("Close Dialog stub");
 }

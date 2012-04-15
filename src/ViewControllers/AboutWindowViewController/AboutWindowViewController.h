@@ -25,9 +25,11 @@ class AboutWindowViewController: public GTKBuilderViewController
 {
 public:
 	AboutWindowViewController();
-
+	void ConnectSignalHandelers();
+	void CloseClicked();
+	
 	//Widgets
-	Gtk::Window *mainWindow;
+	Gtk::AboutDialog *mainWindow;
 
 protected:
 
