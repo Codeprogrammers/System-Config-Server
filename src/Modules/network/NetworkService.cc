@@ -19,4 +19,8 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 
 #include "NetworkService.h"
 
-
+NetworkService::NetworkService()
+{
+	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/Modules/network/NetworkService.glade";
+	loadBuilderFile ();
+}

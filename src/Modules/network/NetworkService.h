@@ -24,7 +24,8 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 class NetworkService: public ServiceModule 
 {
 public:
-
+	NetworkService();
+	void ConnectSignalHandlers();
 protected:
 
 private:

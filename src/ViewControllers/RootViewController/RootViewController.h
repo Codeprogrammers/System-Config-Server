@@ -30,6 +30,7 @@ public:
 
 	void setServiceGridSize();
 	void AboutAppClicked();
+	void ServiceClicked();
 	
 	//Widget Members
 	Gtk::Window *mainWindow;

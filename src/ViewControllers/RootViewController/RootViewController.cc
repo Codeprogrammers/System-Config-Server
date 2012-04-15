@@ -41,6 +41,11 @@ void RootViewController::setServiceGridSize()
 	
 }
 
+void RootViewController::ServiceClicked()
+{
+	g_message("Service Object Clicked, Load Service Module");
+}
+
 void RootViewController::ConnectSignalHandelers()
 {
 	g_message("Connect SignalHandlers Called");
