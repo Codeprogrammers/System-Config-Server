@@ -29,16 +29,27 @@ RootViewController::RootViewController()
 	//assigning widgets to different sections of the GUI
 	mainWindow = 0;
 	gtkBuilder->get_widget("main_window", mainWindow);
-	gtkBuilder->get_widget("serviceSelectionGrid", serviceSelectionGrid);
+	gtkBuilder->get_widget("mainToolbar", mainToolbar);
+	gtkBuilder->get_widget("serviceDetailPane", serviceDetailPane);
+	
+	//MainMenu Widgets
 	gtkBuilder->get_widget("aboutApp", aboutAppMenuAction);
-	gtkBuilder->get_widget("testButton", testButton);
 
+
+	//Add needed widgets to their containers
+	//serviceDetailPane->add1(myTestButton);
+	
 	ConnectSignalHandelers();
+	populateServices();
+}
+void RootViewController::populateServices()
+{
+	g_message("populateServices Stub");
 }
 
 void RootViewController::setServiceGridSize()
 {
-	
+	g_message("setServiceGridSize Stub!");
 }
 
 void RootViewController::ServiceClicked()
@@ -49,7 +60,6 @@ void RootViewController::ServiceClicked()
 void RootViewController::ConnectSignalHandelers()
 {
 	g_message("Connect SignalHandlers Called");
-	testButton->signal_clicked().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	aboutAppMenuAction->signal_activate().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	//aboutAppMenuAction->activate.connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 }
