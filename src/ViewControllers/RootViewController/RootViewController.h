@@ -28,7 +28,7 @@ public:
 	RootViewController();
 	void ConnectSignalHandelers();
 
-	void PopulateServices(Gtk::Grid serviceTable);
+	void PopulateServices();
 	void AboutAppClicked();
 	void ServiceClicked();
 	
@@ -43,8 +43,10 @@ public:
 	
 	//Test Widgets
 	Gtk::Button myTestButton;
-	
-	gint availibleServices;
+
+	//
+	Gtk::ListStore *serviceModules;
+	gint numAvailibleServices;
 protected:
 
 private:

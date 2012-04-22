@@ -18,6 +18,7 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  */
 
 #include "RootViewController.h"
+#include "../../Modules/network/NetworkService.h"
 #include "../AboutWindowViewController/AboutWindowViewController.h"
 
 RootViewController::RootViewController()
@@ -39,13 +40,25 @@ RootViewController::RootViewController()
 	//Create Widget Objects that are not in the gtkbuilder
 
 	//Add needed widgets to their containers
+	//serviceDetailPane->
 	serviceDetailPane->add1(*availibleServicesGrid);
+
+	//Make some temporary services for debugging
 	
+	NetworkService *netService = new NetworkService();
+
+	
+	PopulateServices();
 	ConnectSignalHandelers();
 }
-void RootViewController::PopulateServices(Gtk::Grid serviceTable)
+void RootViewController::PopulateServices()
 {
 	g_message("populateServices Start");
+	myTestButton.set_label ("Service");
+	myTestButton.set_hexpand (TRUE);
+	myTestButton.show();
+	availibleServicesGrid->attach(myTestButton,1,1,1,1);
+	
 }
 
 void RootViewController::ServiceClicked()

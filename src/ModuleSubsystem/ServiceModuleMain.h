@@ -17,10 +17,9 @@ class ServiceModule: public GTKBuilderViewController
 			//@usage: STUB
 			ServiceModule();
 			
-			
+			Glib::ustring serviceName;
 	protected:
 	
 	private:
-		Glib::ustring serviceName;
 };
 #endif
