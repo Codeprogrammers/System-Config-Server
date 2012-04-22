@@ -28,8 +28,7 @@ public:
 	RootViewController();
 	void ConnectSignalHandelers();
 
-	void populateServices();
-	void setServiceGridSize();
+	void PopulateServices(Gtk::Grid serviceTable);
 	void AboutAppClicked();
 	void ServiceClicked();
 	
@@ -37,13 +36,13 @@ public:
 	Gtk::Window *mainWindow;
 	Gtk::Toolbar *mainToolbar;
 	Gtk::Paned *serviceDetailPane;
-	Gtk::Table  *availibleServicesTable;
+	Gtk::Grid  *availibleServicesGrid;
 
 	//MainMenu Widgets
 	Gtk::MenuItem *aboutAppMenuAction;
 	
 	//Test Widgets
-	Gtk::Button *myTestButton;
+	Gtk::Button myTestButton;
 	
 	gint availibleServices;
 protected:

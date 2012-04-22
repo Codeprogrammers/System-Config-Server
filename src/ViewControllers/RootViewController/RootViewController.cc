@@ -31,25 +31,21 @@ RootViewController::RootViewController()
 	gtkBuilder->get_widget("main_window", mainWindow);
 	gtkBuilder->get_widget("mainToolbar", mainToolbar);
 	gtkBuilder->get_widget("serviceDetailPane", serviceDetailPane);
+	gtkBuilder->get_widget("availibleServicesGrid", availibleServicesGrid);
 	
 	//MainMenu Widgets
 	gtkBuilder->get_widget("aboutApp", aboutAppMenuAction);
 
+	//Create Widget Objects that are not in the gtkbuilder
 
 	//Add needed widgets to their containers
-	//serviceDetailPane->add1(myTestButton);
+	serviceDetailPane->add1(*availibleServicesGrid);
 	
 	ConnectSignalHandelers();
-	populateServices();
 }
-void RootViewController::populateServices()
+void RootViewController::PopulateServices(Gtk::Grid serviceTable)
 {
-	g_message("populateServices Stub");
-}
-
-void RootViewController::setServiceGridSize()
-{
-	g_message("setServiceGridSize Stub!");
+	g_message("populateServices Start");
 }
 
 void RootViewController::ServiceClicked()
