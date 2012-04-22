@@ -43,10 +43,9 @@ public:
 	
 	//Test Widgets
 	Gtk::Button myTestButton;
-
-	//
-	Gtk::ListStore *serviceModules;
-	gint numAvailibleServices;
+	
+	//Should be Private variables;
+	GList *serviceModules;
 protected:
 
 private:

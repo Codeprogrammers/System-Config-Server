@@ -46,8 +46,12 @@ RootViewController::RootViewController()
 	//Make some temporary services for debugging
 	
 	NetworkService *netService = new NetworkService();
-
-	
+	//Puts out a nasty warning about pointer returns
+	serviceModules = g_list_append(serviceModules, netService);
+	serviceModules = g_list_append(serviceModules, new gint(3));
+	g_message("Service Module Size %i", g_list_length (serviceModules));
+	void *myPointer = g_list_nth_data (serviceModules, 1);
+	g_message("Service name: %s", myPointer->serviceName);
 	PopulateServices();
 	ConnectSignalHandelers();
 }
