@@ -45,6 +45,7 @@ public:
 	Gtk::Button myTestButton;
 	
 	//Should be Private variables;
+	GList *serviceModuleButtons;
 	GList *serviceModules;
 protected:
 

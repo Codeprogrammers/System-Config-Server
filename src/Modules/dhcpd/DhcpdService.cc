@@ -19,4 +19,9 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 
 #include "DhcpdService.h"
 
-
+DhcpdService::DhcpdService()
+{
+	serviceName = "DHCP";
+	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/Modules/dhcpd/DhcpdService.glade";
+	loadBuilderFile ();
+}

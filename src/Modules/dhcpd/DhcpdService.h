@@ -24,7 +24,7 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 class DhcpdService: public ServiceModule 
 {
 public:
-
+	DhcpdService();
 protected:
 
 private:
