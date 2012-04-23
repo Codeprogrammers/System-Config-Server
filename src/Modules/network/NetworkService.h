@@ -31,7 +31,6 @@ public:
 	
 	//Debug Functions
 	void CheezTest();
-	Gtk::Button *cheezButton;
 protected:
 
 private:

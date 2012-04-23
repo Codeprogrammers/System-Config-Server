@@ -32,12 +32,10 @@ void NetworkService::LoadWidgets()
 {
 	g_message("Loading Network Service Widgets");
 	gtkBuilder->get_widget("mainView", mainView);
-	gtkBuilder->get_widget("cheez", cheezButton);
 }
 
 void NetworkService::ConnectSignalHandlers()
 {
-	cheezButton->signal_clicked().connect(sigc::mem_fun(*this, &NetworkService::CheezTest));
 }
 
 void NetworkService::CheezTest()

@@ -2,6 +2,8 @@
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkViewport" id="mainView">
+    <property name="width_request">640</property>
+    <property name="height_request">480</property>
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="hexpand">True</property>
@@ -30,19 +32,31 @@
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <child>
-                      <object class="GtkButton" id="cheez">
-                        <property name="label" translatable="yes">Can I haz cheezburgr</property>
-                        <property name="use_action_appearance">False</property>
-                        <property name="width_request">146</property>
+                      <object class="GtkLabel" id="ServiceTitle">
+                        <property name="width_request">154</property>
                         <property name="height_request">80</property>
                         <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="use_action_appearance">False</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_right">198</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <property name="label" translatable="yes">Network Configuration</property>
+                        <property name="use_underline">True</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Sans Bold Italic 15"/>
+                        </attributes>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="combobox1">
+                        <property name="width_request">300</property>
+                        <property name="height_request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
                       </object>
                       <packing>
-                        <property name="x">21</property>
-                        <property name="y">438</property>
+                        <property name="x">1</property>
+                        <property name="y">24</property>
                       </packing>
                     </child>
                   </object>
