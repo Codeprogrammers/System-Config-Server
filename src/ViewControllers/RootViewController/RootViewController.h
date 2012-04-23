@@ -41,8 +41,9 @@ public:
 	//MainMenu Widgets
 	Gtk::MenuItem *aboutAppMenuAction;
 	
-	//Test Widgets
+	//Test Widgets & Functions (To be deleted before release)
 	Gtk::Button myTestButton;
+	void printTestMessage();
 	
 	//Should be Private variables;
 	GList *serviceModuleButtons;

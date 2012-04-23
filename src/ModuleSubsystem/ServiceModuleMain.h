@@ -16,6 +16,8 @@ class ServiceModule: public GTKBuilderViewController
 			//@post:The module is loaded from the file
 			//@usage: STUB
 			ServiceModule();
+
+			void ShowServiceModule();
 			
 			Glib::ustring serviceName;
 	protected:

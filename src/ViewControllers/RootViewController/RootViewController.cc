@@ -18,6 +18,7 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  */
 
 #include "RootViewController.h"
+#include "../../ModuleSubsystem/ServiceModuleMain.h"
 #include "../../Modules/network/NetworkService.h"
 #include "../../Modules/dhcpd/DhcpdService.h"
 #include "../AboutWindowViewController/AboutWindowViewController.h"
@@ -58,26 +59,23 @@ void RootViewController::PopulateServices()
 	g_message("populateServices Start with services: %i", g_list_length (serviceModules));
 
 	Gtk::Button* currentServiceButton;
+	ServiceModule* currentServiceModule;
 	for(int currentService = 0; currentService < g_list_length (serviceModules); currentService++)
 	{
-		//g_message("Creating Service object Button: %i", currentService);
-		//currentServiceLink = g_list_nth (serviceModules, currentService);
 		currentServiceButton = new Gtk::Button();
-		//currentServiceButton->set_label("Hello");
-		currentServiceButton->set_label( (* (ServiceModule *) (g_list_nth_data (serviceModules, currentService))).serviceName);
+		currentServiceModule = ( (ServiceModule *) (g_list_nth_data (serviceModules, currentService)));
+		currentServiceButton->set_label(currentServiceModule->serviceName);
 		currentServiceButton->set_hexpand(TRUE);
 		currentServiceButton->show();
+		currentServiceButton->signal_clicked().connect(sigc::mem_fun((ServiceModule *) currentServiceModule, &ServiceModule::ShowServiceModule));
+		//currentServiceButton->signal_clicked().connect(sigc::ptr_fun((ServiceModule *) currentServiceModule->ShowServiceModule));
 		availibleServicesGrid->attach(*currentServiceButton, 1,currentService,1,1);
 		serviceModuleButtons = g_list_append(serviceModuleButtons, currentServiceButton);
-		//serviceModuleButtons = g_list_append(serviceModuleButtons, new Gtk::Button);
-		//((*(Gtk::Button *) (g_list_nth_data (serviceModuleButtons, currentService))).set_label ("Hello"));
-
 	}
-	//myTestButton.set_label ("Service");
-	//myTestButton.set_hexpand (TRUE);
-	//myTestButton.show();
-	//availibleServicesGrid->attach(myTestButton,1,1,1,1);
-	
+	currentServiceButton = NULL;
+	currentServiceModule = NULL;
+	delete currentServiceModule;
+	delete currentServiceButton;
 }
 
 void RootViewController::ServiceClicked()
@@ -97,4 +95,9 @@ void RootViewController::AboutAppClicked()
 	g_message("About Application Called");
 	AboutWindowViewController *currentAboutViewController = new AboutWindowViewController();
 	currentAboutViewController->mainWindow->show();
+}
+
+void RootViewController::printTestMessage()
+{
+	g_message("Debug Message Tester :P");
 }
