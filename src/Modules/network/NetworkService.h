@@ -27,6 +27,11 @@ public:
 	NetworkService();
 
 	void LoadWidgets();
+	void ConnectSignalHandlers();
+	
+	//Debug Functions
+	void CheezTest();
+	Gtk::Button *cheezButton;
 protected:
 
 private:

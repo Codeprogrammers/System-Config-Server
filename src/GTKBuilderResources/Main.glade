@@ -269,6 +269,8 @@
               <object class="GtkScrolledWindow" id="selectedService">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
                 <property name="shadow_type">in</property>
                 <property name="min_content_width">600</property>
                 <child>
