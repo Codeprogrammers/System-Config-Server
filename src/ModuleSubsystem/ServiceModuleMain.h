@@ -18,6 +18,7 @@ class ServiceModule: public GTKBuilderViewController
 
 			void ShowServiceModule();
 
+			Gtk::ScrolledWindow *rootServiceWindow;
 			Gtk::Viewport *mainView;
 			Glib::ustring serviceName;
 	protected:

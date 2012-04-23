@@ -70,8 +70,9 @@ void RootViewController::PopulateServicesMenu()
 		currentServiceButton->set_hexpand(TRUE);
 		currentServiceButton->show();
 		//The correct line to set signal handlers
-		//currentServiceButton->signal_clicked().connect(sigc::mem_fun((ServiceModule *) currentServiceModule, &ServiceModule::ShowServiceModule));
-		currentServiceButton->signal_clicked().connect(sigc::mem_fun(*this, &RootViewController::ServiceClicked));
+		currentServiceModule->rootServiceWindow = selectedService;
+		currentServiceButton->signal_clicked().connect(sigc::mem_fun((ServiceModule *) currentServiceModule, &ServiceModule::ShowServiceModule));
+		//currentServiceButton->signal_clicked().connect(sigc::mem_fun(*this, &RootViewController::ServiceClicked));
 		
 		//Add the newly created button to the left hand side service selection page
 		//and add the button to it's own list to keep a permanet pointer to it.
