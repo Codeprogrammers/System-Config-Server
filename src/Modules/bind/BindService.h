@@ -26,6 +26,8 @@ class BindService: public ServiceModule
 public:
 	BindService();
 
+	void LoadWidgets();
+	void ConnectSignalHandlers();
 protected:
 
 private:

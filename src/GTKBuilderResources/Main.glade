@@ -83,13 +83,14 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem5">
+                      <object class="GtkImageMenuItem" id="quitApp">
                         <property name="label">gtk-quit</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
+                        <signal name="activate" handler="QuitApp" swapped="no"/>
                       </object>
                     </child>
                   </object>
@@ -225,9 +226,6 @@
                       <object class="GtkGrid" id="availibleServicesGrid">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <child>
-                          <placeholder/>
-                        </child>
                         <child>
                           <placeholder/>
                         </child>

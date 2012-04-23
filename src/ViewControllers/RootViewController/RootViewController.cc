@@ -38,6 +38,7 @@ RootViewController::RootViewController()
 	
 	//MainMenu Widgets
 	gtkBuilder->get_widget("aboutApp", aboutAppMenuAction);
+	gtkBuilder->get_widget("quitApp", quitAppMenuAction);
 
 	//Create Widget Objects that are not in the gtkbuilder
 
@@ -91,6 +92,7 @@ void RootViewController::ConnectSignalHandelers()
 {
 	g_message("Connect SignalHandlers Called");
 	aboutAppMenuAction->signal_activate().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
+	quitAppMenuAction->signal_activate().connect(sigc::mem_fun(*this, &RootViewController::QuitApp));
 	//aboutAppMenuAction->activate.connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 }
 
@@ -102,6 +104,10 @@ void RootViewController::ServiceClicked()
 	selectedService->add(*test->mainView);
 }
 
+void RootViewController::QuitApp()
+{
+	g_message("Application Exiting");
+}
 void RootViewController::AboutAppClicked()
 {
 	g_message("About Application Called");

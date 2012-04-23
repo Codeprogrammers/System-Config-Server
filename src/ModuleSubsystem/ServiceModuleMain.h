@@ -17,6 +17,8 @@ class ServiceModule: public GTKBuilderViewController
 			ServiceModule();
 
 			void ShowServiceModule();
+			void LoadWidgets();
+			void ConnectSignalHandlers();
 
 			Gtk::ScrolledWindow *rootServiceWindow;
 			Gtk::Viewport *mainView;

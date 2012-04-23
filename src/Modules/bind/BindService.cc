@@ -23,5 +23,15 @@ BindService::BindService()
 {
 	serviceName = "DNS";
 	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/Modules/bind/BindService.glade";
-	loadBuilderFile ();
+	loadBuilderFile();
+	LoadWidgets();
+	ConnectSignalHandlers();
+}
+
+void BindService::LoadWidgets()
+{
+	gtkBuilder->get_widget("mainView", mainView);
+}
+void BindService::ConnectSignalHandlers()
+{
 }

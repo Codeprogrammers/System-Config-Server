@@ -30,6 +30,7 @@ public:
 	void ConnectSignalHandelers();
 
 	void PopulateServicesMenu();
+	void QuitApp();
 	void AboutAppClicked();
 	
 	//Widget Members
@@ -42,6 +43,7 @@ public:
 	
 	//MainMenu Widgets
 	Gtk::MenuItem *aboutAppMenuAction;
+	Gtk::MenuItem *quitAppMenuAction;
 	
 	//Test Widgets & Functions (To be deleted before release)
 	Gtk::Button myTestButton;
