@@ -34,6 +34,7 @@ RootViewController::RootViewController()
 	gtkBuilder->get_widget("mainToolbar", mainToolbar);
 	gtkBuilder->get_widget("serviceDetailPane", serviceDetailPane);
 	gtkBuilder->get_widget("availibleServicesGrid", availibleServicesGrid);
+	gtkBuilder->get_widget("selectedService", selectedService);
 	
 	//MainMenu Widgets
 	gtkBuilder->get_widget("aboutApp", aboutAppMenuAction);
@@ -68,8 +69,10 @@ void RootViewController::PopulateServicesMenu()
 		currentServiceButton->set_label(currentServiceModule->serviceName);
 		currentServiceButton->set_hexpand(TRUE);
 		currentServiceButton->show();
-		currentServiceButton->signal_clicked().connect(sigc::mem_fun((ServiceModule *) currentServiceModule, &ServiceModule::ShowServiceModule));
-
+		//The correct line to set signal handlers
+		//currentServiceButton->signal_clicked().connect(sigc::mem_fun((ServiceModule *) currentServiceModule, &ServiceModule::ShowServiceModule));
+		currentServiceButton->signal_clicked().connect(sigc::mem_fun(*this, &RootViewController::ServiceClicked));
+		
 		//Add the newly created button to the left hand side service selection page
 		//and add the button to it's own list to keep a permanet pointer to it.
 		availibleServicesGrid->attach(*currentServiceButton, 1,currentService,1,1);
@@ -88,6 +91,12 @@ void RootViewController::ConnectSignalHandelers()
 	g_message("Connect SignalHandlers Called");
 	aboutAppMenuAction->signal_activate().connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 	//aboutAppMenuAction->activate.connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
+}
+
+void RootViewController::ServiceClicked()
+{
+	g_message("Service Clicked");
+	//selectedService->
 }
 
 void RootViewController::AboutAppClicked()

@@ -25,7 +25,8 @@ class NetworkService: public ServiceModule
 {
 public:
 	NetworkService();
-	void ConnectSignalHandlers();
+
+	void LoadWidgets();
 protected:
 
 private:

@@ -25,7 +25,9 @@ class GTKBuilderViewController
 {
 	public:
 		GTKBuilderViewController();
-		void loadBuilderFile();		
+		void loadBuilderFile();
+		void LoadWidgets();
+		void ConnectSignalHandlers();
 	protected:
 		Glib::ustring  gtkBuilderFilePath;
 		Glib::RefPtr<Gtk::Builder> gtkBuilder;

@@ -37,13 +37,16 @@ public:
 	Gtk::Toolbar *mainToolbar;
 	Gtk::Paned *serviceDetailPane;
 	Gtk::Grid  *availibleServicesGrid;
+	Gtk::ScrolledWindow *selectedService;
 
+	
 	//MainMenu Widgets
 	Gtk::MenuItem *aboutAppMenuAction;
 	
 	//Test Widgets & Functions (To be deleted before release)
 	Gtk::Button myTestButton;
 	void printTestMessage();
+	void ServiceClicked();
 	
 	//Should be Private variables;
 	GList *serviceModuleButtons;

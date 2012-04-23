@@ -3,7 +3,6 @@
 
 #include <gtkmm.h>
 #include <libxml++/libxml++.h>
-#include <iostream>
 #include "../ViewControllers/GTKBuilderViewController.h"
 
 class ServiceModule: public GTKBuilderViewController
@@ -18,7 +17,8 @@ class ServiceModule: public GTKBuilderViewController
 			ServiceModule();
 
 			void ShowServiceModule();
-			
+
+			Gtk::Viewport *mainView;
 			Glib::ustring serviceName;
 	protected:
 	
