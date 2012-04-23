@@ -24,4 +24,15 @@ DhcpdService::DhcpdService()
 	serviceName = "DHCP";
 	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/Modules/dhcpd/DhcpdService.glade";
 	loadBuilderFile ();
+	LoadWidgets();
+	ConnectSignalHandlers();
+}
+
+void DhcpdService::LoadWidgets()
+{	
+	g_message("Loading Dhcp Service Widgets");
+	gtkBuilder->get_widget("mainView", mainView);
+}
+void DhcpdService::ConnectSignalHandlers()
+{
 }

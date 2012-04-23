@@ -9,5 +9,10 @@ ServiceModule::ServiceModule()
 void ServiceModule::ShowServiceModule()
 {
 	g_message("Clicked Module: %s", serviceName.c_str());
-	rootServiceWindow->add(*mainView);
+	if(rootServiceWindow != NULL)
+	   {
+		   rootServiceWindow->remove();
+		   rootServiceWindow->add(*mainView);
+	   }
+	
 }

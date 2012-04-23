@@ -25,6 +25,11 @@ class DhcpdService: public ServiceModule
 {
 public:
 	DhcpdService();
+
+	void LoadWidgets();
+	void ConnectSignalHandlers();
+
+	
 protected:
 
 private:
