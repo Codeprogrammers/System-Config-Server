@@ -18,10 +18,9 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  */
 
 #include "RootViewController.h"
-#include "../../ModuleSubsystem/ServiceModuleMain.h"
 #include "../../Modules/network/NetworkService.h"
 #include "../../Modules/dhcpd/DhcpdService.h"
-#include "../AboutWindowViewController/AboutWindowViewController.h"
+#include "../../Modules/bind/BindService.h"
 
 RootViewController::RootViewController()
 {
@@ -51,10 +50,11 @@ RootViewController::RootViewController()
 	//Puts out a nasty warning about pointer returns
 	serviceModules = g_list_append(serviceModules, new NetworkService);
 	serviceModules = g_list_append(serviceModules, new DhcpdService);
-	PopulateServices();
+	serviceModules = g_list_append(serviceModules, new BindService);
+	PopulateServicesMenu();
 	ConnectSignalHandelers();
 }
-void RootViewController::PopulateServices()
+void RootViewController::PopulateServicesMenu()
 {
 	g_message("populateServices Start with services: %i", g_list_length (serviceModules));
 
@@ -62,25 +62,25 @@ void RootViewController::PopulateServices()
 	ServiceModule* currentServiceModule;
 	for(int currentService = 0; currentService < g_list_length (serviceModules); currentService++)
 	{
+		//Create a new button for a specific service and configure it
 		currentServiceButton = new Gtk::Button();
 		currentServiceModule = ( (ServiceModule *) (g_list_nth_data (serviceModules, currentService)));
 		currentServiceButton->set_label(currentServiceModule->serviceName);
 		currentServiceButton->set_hexpand(TRUE);
 		currentServiceButton->show();
 		currentServiceButton->signal_clicked().connect(sigc::mem_fun((ServiceModule *) currentServiceModule, &ServiceModule::ShowServiceModule));
-		//currentServiceButton->signal_clicked().connect(sigc::ptr_fun((ServiceModule *) currentServiceModule->ShowServiceModule));
+
+		//Add the newly created button to the left hand side service selection page
+		//and add the button to it's own list to keep a permanet pointer to it.
 		availibleServicesGrid->attach(*currentServiceButton, 1,currentService,1,1);
 		serviceModuleButtons = g_list_append(serviceModuleButtons, currentServiceButton);
 	}
-	currentServiceButton = NULL;
+
+	//Remove the temporary interation pointers
 	currentServiceModule = NULL;
+	currentServiceButton = NULL;
 	delete currentServiceModule;
 	delete currentServiceButton;
-}
-
-void RootViewController::ServiceClicked()
-{
-	g_message("Service Object Clicked, Load Service Module");
 }
 
 void RootViewController::ConnectSignalHandelers()

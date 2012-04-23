@@ -16,8 +16,9 @@ System-Config-Server is free software: you can redistribute it and/or modify it
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #include "../GTKBuilderViewController.h"
+#include "../AboutWindowViewController/AboutWindowViewController.h"
+#include "../../ModuleSubsystem/ServiceModuleMain.h"
 #ifndef _ROOTVIEWCONTROLLER_H_
 #define _ROOTVIEWCONTROLLER_H_
 
@@ -28,9 +29,8 @@ public:
 	RootViewController();
 	void ConnectSignalHandelers();
 
-	void PopulateServices();
+	void PopulateServicesMenu();
 	void AboutAppClicked();
-	void ServiceClicked();
 	
 	//Widget Members
 	Gtk::Window *mainWindow;

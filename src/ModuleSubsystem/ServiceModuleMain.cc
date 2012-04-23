@@ -8,5 +8,5 @@ ServiceModule::ServiceModule()
 
 void ServiceModule::ShowServiceModule()
 {
-	g_message("Time to show module");
+	g_message("Clicked Module: %s", serviceName.c_str());
 }
