@@ -24,6 +24,7 @@ NetworkService::NetworkService()
 	serviceName = "Network";
 	gtkBuilderFilePath = "/home/brad/dev/System-Config-Server/src/Modules/network/NetworkService.glade";
 	loadBuilderFile ();
+	LoadWidgets ();
 }
 
 void NetworkService::LoadWidgets()

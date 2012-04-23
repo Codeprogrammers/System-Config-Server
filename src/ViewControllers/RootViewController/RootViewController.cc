@@ -96,7 +96,9 @@ void RootViewController::ConnectSignalHandelers()
 void RootViewController::ServiceClicked()
 {
 	g_message("Service Clicked");
-	//selectedService->
+	NetworkService *test = ( (NetworkService *) (g_list_nth_data (serviceModules, 0)));
+	//gtk_scrolled_window_add_with_viewport (*selectedService, *test->mainView );
+	selectedService->add(*test->mainView);
 }
 
 void RootViewController::AboutAppClicked()

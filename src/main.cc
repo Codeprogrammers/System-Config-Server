@@ -42,7 +42,7 @@ int main (int argc, char *argv[])
 	Gtk::Main kit(argc, argv);
 
 	RootViewController *rootController = new RootViewController();
-	if (rootController->mainWindow)
+	if(rootController->mainWindow)
 	{
 		kit.run(*rootController->mainWindow);
 	}
