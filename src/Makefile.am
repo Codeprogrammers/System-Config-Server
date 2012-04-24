@@ -35,7 +35,9 @@ system_config_server_SOURCES = \
 	Modules/dhcpd/DhcpdService.cc \
 	Modules/dhcpd/DhcpdService.h \
 	Modules/network/NetworkService.cc \
-	Modules/network/NetworkService.h
+	Modules/network/NetworkService.h \
+	Modules/network/NetworkServiceViewControllers/NetworkInterfaceViewController.cc \
+	Modules/network/NetworkServiceViewControllers/NetworkInterfaceViewController.h
 
 system_config_server_LDFLAGS = 
 

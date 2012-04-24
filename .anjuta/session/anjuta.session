@@ -1,13 +1,12 @@
 
 [Anjuta]
-Geometry=1345x931+492+82
+Geometry=1345x931+494+101
 
 [Project Manager]
-Shortcut=System-Config-Server
-Expand=System-Config-Server%%%System-Config-Server//src%%%System-Config-Server//src//ui%%%System-Config-Server//system_config_serverdoc
+Expand=System-Config-Server%%%System-Config-Server//src%%%System-Config-Server//src//ui%%%System-Config-Server//system_config_serverdoc%%%System-Config-Server//SYSTEM_CONFIG_SERVER
 
 [File Loader]
-Files=../../src/RootViewController.h#1%%%../../src/RootViewController.cc#1
+Files=../../src/Modules/network/NetworkService.cc#38%%%../../src/Modules/network/NetworkService.h#28
 
 [Document Manager]
 bookmarks=<?xml version="1.0" encoding="UTF-8"?>\n<bookmarks/>\n
