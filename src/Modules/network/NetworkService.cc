@@ -32,6 +32,9 @@ void NetworkService::LoadWidgets()
 {
 	g_message("Loading Network Service Widgets");
 	gtkBuilder->get_widget("mainView", mainView);
+	gtkBuilder->get_widget("basicNetworkInterface", basicNetworkInterface);
+
+	//basicNetworkInterface->add(*testInterface->mainView);
 }
 
 void NetworkService::ConnectSignalHandlers()

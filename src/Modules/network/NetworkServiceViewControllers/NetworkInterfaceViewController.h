@@ -28,7 +28,21 @@ public:
 		void LoadWidgets();
 		void ConnectSignalHandlers();
 
+		//Widgets
 		Gtk::Viewport *mainView;
+
+		//Objects
+		Glib::ustring *ethernetName;
+		Glib::ustring *ethernetNickName;
+		Glib::ustring *ipV4Address;
+		Glib::ustring *subnet;
+		Glib::ustring *gateway;
+		Glib::ustring *ipV6Address;
+		Glib::ustring *ipV6Prefix;
+
+		gboolean *ipV6Enabled;
+		
+		GList *dnsList;
 protected:
 
 private:

@@ -20,6 +20,7 @@ System-Config-Server is free software: you can redistribute it and/or modify it
 #ifndef _NETWORKSERVICE_H_
 #define _NETWORKSERVICE_H_
 #include "../../ModuleSubsystem/ServiceModuleMain.h"
+#include "./NetworkServiceViewControllers/NetworkInterfaceViewController.h"
 
 class NetworkService: public ServiceModule 
 {
@@ -28,8 +29,15 @@ public:
 
 	void LoadWidgets();
 	void ConnectSignalHandlers();
+
+	//Widgets
+	Gtk::ScrolledWindow *basicNetworkInterface;
 	
-	//Debug Functions
+	//Internal Data structures
+	GList networkInterfaces;
+	
+	//Debug Functions & Widgets
+	NetworkInterfaceViewController *testInterface;
 	void CheezTest();
 protected:
 

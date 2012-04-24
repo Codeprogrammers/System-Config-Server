@@ -2,12 +2,268 @@
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkViewport" id="mainView">
+    <property name="width_request">400</property>
+    <property name="height_request">300</property>
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="hexpand">True</property>
     <property name="vexpand">True</property>
     <child>
-      <placeholder/>
+      <object class="GtkScrolledWindow" id="scrolledwindow1">
+        <property name="width_request">400</property>
+        <property name="height_request">300</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="shadow_type">in</property>
+        <child>
+          <object class="GtkViewport" id="viewport1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkLayout" id="layout1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <child>
+                  <object class="GtkLabel" id="label1">
+                    <property name="width_request">72</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_markup" translatable="yes">	</property>
+                    <property name="label" translatable="yes">IP</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry1">
+                    <property name="width_request">162</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="invisible_char">•</property>
+                  </object>
+                  <packing>
+                    <property name="x">84</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label2">
+                    <property name="width_request">72</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">	</property>
+                    <property name="tooltip_text" translatable="yes">	</property>
+                    <property name="label" translatable="yes">Subnet</property>
+                  </object>
+                  <packing>
+                    <property name="y">30</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label3">
+                    <property name="width_request">72</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">	</property>
+                    <property name="tooltip_text" translatable="yes">	</property>
+                    <property name="label" translatable="yes">Gateway</property>
+                  </object>
+                  <packing>
+                    <property name="y">60</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry2">
+                    <property name="width_request">162</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="invisible_char">•</property>
+                    <property name="invisible_char_set">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">83</property>
+                    <property name="y">30</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry3">
+                    <property name="width_request">162</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="invisible_char">•</property>
+                    <property name="invisible_char_set">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">84</property>
+                    <property name="y">61</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label4">
+                    <property name="width_request">72</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">	</property>
+                    <property name="tooltip_text" translatable="yes">	</property>
+                    <property name="label" translatable="yes">DNS</property>
+                  </object>
+                  <packing>
+                    <property name="x">1</property>
+                    <property name="y">97</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="switch1">
+                    <property name="use_action_appearance">False</property>
+                    <property name="width_request">100</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="use_action_appearance">False</property>
+                  </object>
+                  <packing>
+                    <property name="x">115</property>
+                    <property name="y">236</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label5">
+                    <property name="width_request">72</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">	</property>
+                    <property name="tooltip_text" translatable="yes">	</property>
+                    <property name="label" translatable="yes">IPV6</property>
+                  </object>
+                  <packing>
+                    <property name="x">5</property>
+                    <property name="y">237</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label6">
+                    <property name="width_request">72</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">	</property>
+                    <property name="tooltip_text" translatable="yes">	</property>
+                    <property name="label" translatable="yes">IP</property>
+                  </object>
+                  <packing>
+                    <property name="x">3</property>
+                    <property name="y">266</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry4">
+                    <property name="width_request">300</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="invisible_char">•</property>
+                    <property name="invisible_char_set">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">80</property>
+                    <property name="y">269</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label7">
+                    <property name="width_request">72</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_markup" translatable="yes">	</property>
+                    <property name="tooltip_text" translatable="yes">	</property>
+                    <property name="label" translatable="yes">Prefix</property>
+                  </object>
+                  <packing>
+                    <property name="x">3</property>
+                    <property name="y">302</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkScrolledWindow" id="scrolledwindow2">
+                    <property name="width_request">300</property>
+                    <property name="height_request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <property name="shadow_type">in</property>
+                    <child>
+                      <object class="GtkViewport" id="viewport2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">True</property>
+                        <child>
+                          <object class="GtkGrid" id="grid1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="x">85</property>
+                    <property name="y">105</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry5">
+                    <property name="width_request">162</property>
+                    <property name="height_request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="invisible_char">•</property>
+                    <property name="invisible_char_set">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">83</property>
+                    <property name="y">303</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
     </child>
   </object>
 </interface>
