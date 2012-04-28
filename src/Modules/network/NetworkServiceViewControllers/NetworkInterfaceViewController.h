@@ -30,6 +30,12 @@ public:
 
 		//Widgets
 		Gtk::Viewport *mainView;
+	
+		Gtk::Entry *ipV4TextBox;
+		Gtk::Entry *subnetTextBox;
+		Gtk::Entry *gatewayTextBox;
+		Gtk::Entry *ipV6TextBox;
+		Gtk::Entry *ipV6PrefixTextBox;
 
 		//Objects
 		Glib::ustring *ethernetName;

@@ -96,13 +96,6 @@ void RootViewController::ConnectSignalHandelers()
 	//aboutAppMenuAction->activate.connect(sigc::mem_fun(*this, &RootViewController::AboutAppClicked));
 }
 
-void RootViewController::ServiceClicked()
-{
-	g_message("Service Clicked");
-	NetworkService *test = ( (NetworkService *) (g_list_nth_data (serviceModules, 0)));
-	//gtk_scrolled_window_add_with_viewport (*selectedService, *test->mainView );
-	selectedService->add(*test->mainView);
-}
 
 void RootViewController::QuitApp()
 {

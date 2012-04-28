@@ -32,6 +32,9 @@ public:
 
 	//Widgets
 	Gtk::ScrolledWindow *basicNetworkInterface;
+	Gtk::ComboBox *interfaceSelector;
+	Gtk::Button *applySettings;
+	Gtk::Button *resetSettings;
 	
 	//Internal Data structures
 	GList networkInterfaces;

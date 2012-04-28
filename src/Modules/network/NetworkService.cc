@@ -26,6 +26,9 @@ NetworkService::NetworkService()
 	loadBuilderFile();
 	LoadWidgets();
 	ConnectSignalHandlers();
+
+	testInterface = new NetworkInterfaceViewController();
+	testInterface->ethernetName = new Glib::ustring("eth0");
 }
 
 void NetworkService::LoadWidgets()
@@ -33,8 +36,18 @@ void NetworkService::LoadWidgets()
 	g_message("Loading Network Service Widgets");
 	gtkBuilder->get_widget("mainView", mainView);
 	gtkBuilder->get_widget("basicNetworkInterface", basicNetworkInterface);
+	gtkBuilder->get_widget("interfaceSelector", interfaceSelector);
 
-	//basicNetworkInterface->add(*testInterface->mainView);
+	testInterface = new NetworkInterfaceViewController;
+	
+	//GTK Entry
+
+	//GTK Buttons
+	gtkBuilder->get_widget("applySettings", applySettings);
+	gtkBuilder->get_widget("resetSettings", resetSettings);
+
+	basicNetworkInterface->remove();
+	basicNetworkInterface->add(*testInterface->mainView);
 }
 
 void NetworkService::ConnectSignalHandlers()

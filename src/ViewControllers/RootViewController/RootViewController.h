@@ -48,7 +48,6 @@ public:
 	//Test Widgets & Functions (To be deleted before release)
 	Gtk::Button myTestButton;
 	void printTestMessage();
-	void ServiceClicked();
 	
 	//Should be Private variables;
 	GList *serviceModuleButtons;

@@ -32,7 +32,13 @@ NetworkInterfaceViewController::NetworkInterfaceViewController()
 void NetworkInterfaceViewController::LoadWidgets()
 {
 	g_message("Loading Network Interface Service Widgets");
+
+	//Connect gtkBuilder Widgets
 	gtkBuilder->get_widget("mainView", mainView);
+	gtkBuilder->get_widget("ipV4TextBox", ipV4TextBox);
+	gtkBuilder->get_widget("subnetTextBox", subnetTextBox);
+	gtkBuilder->get_widget("ipV6Address", ipV6TextBox);
+	gtkBuilder->get_widget("ipV6Prefix", ipV6PrefixTextBox);
 }
 
 void NetworkInterfaceViewController::ConnectSignalHandlers()
