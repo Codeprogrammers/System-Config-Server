@@ -38,13 +38,12 @@ public:
 	Gtk::TextView *configFileTextBox;
 	
 	//Internal Data structures
-	Gtk::ComboBox *interfaceSelector;
-	Glib::RefPtr<Gtk::ListStore> interfaceSelectorTreeModel;
-	
 
-	//InterfaceSelector Data Structures
-	
 	GList networkInterfaces;
+	//InterfaceSelector Data Structures
+
+	//TextView Data Structures
+	Glib::RefPtr<Gtk::TextBuffer> rawConfigTextBuffer;
 
 	//File Specific Data
 	Glib::ustring *filePath;
@@ -54,7 +53,27 @@ public:
 	
 	//Debug Functions & Widgets
 	NetworkInterfaceViewController *testInterface;
-	void CheezTest();
+	void CheezTest();	
+	
+	//Column TreeModel Class
+	class ModelColumns : public Gtk::TreeModel::ColumnRecord
+	{
+		public:
+
+		ModelColumns()
+		{ 
+			add(m_col_id); add(m_col_name); 
+		}
+
+		Gtk::TreeModelColumn<int> m_col_id;
+		Gtk::TreeModelColumn<Glib::ustring> m_col_name;
+	};
+	
+	//ComboBox (interfaceSelector) Data Structures
+	Gtk::ComboBox *interfaceSelector;
+	Glib::RefPtr<Gtk::ListStore> interfaceSelectorTreeModel;
+	ModelColumns interfaceSelectorColumns;
+	
 protected:
 
 private:

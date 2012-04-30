@@ -34,7 +34,16 @@ NetworkService::NetworkService()
 	testInterface = new NetworkInterfaceViewController();
 	testInterface->ethernetName = new Glib::ustring("eth0");
 
+	//Setup interfaceSelection ComboBox
+	interfaceSelectorTreeModel = Gtk::ListStore::create(interfaceSelectorColumns);
+	interfaceSelector->set_model(interfaceSelectorTreeModel);
+
+
+	
+	//New objects
+	rawConfigTextBuffer = Gtk::TextBuffer::create();
 	//Debug
+	CheezTest ();
 }
 
 void NetworkService::LoadWidgets()
@@ -62,5 +71,20 @@ void NetworkService::ConnectSignalHandlers()
 void NetworkService::CheezTest()
 {
 	g_message("We haz readFile.");
-	
+	rawConfigTextBuffer->set_text("Hi There");
+	configFileTextBox->set_buffer(rawConfigTextBuffer);
+
+	Glib::RefPtr<Gio::File> f = Gio::File::create_for_path("/etc/profile");
+	Glib::RefPtr<Gio::FileInputStream> file_stream = f->read();
+	Glib::RefPtr<Gio::DataInputStream> data_stream = Gio::DataInputStream::create(file_stream);
+
+	//rawConfigTextBuffer->set_text("Hello");
+	//configFileTextBox->set_buffer(data_stream->get_stream);
+
+	  Gtk::TreeModel::Row row = *(interfaceSelectorTreeModel->append());
+	  row[interfaceSelectorColumns.m_col_id] = 1;
+      row[interfaceSelectorColumns.m_col_name] = "eth0 - Ethernet";
+
+		interfaceSelector->pack_start(interfaceSelectorColumns.m_col_id);
+		interfaceSelector->pack_start(interfaceSelectorColumns.m_col_name);
 }
