@@ -26,6 +26,8 @@ NetworkInterfaceViewController::NetworkInterfaceViewController()
 	loadBuilderFile();
 	LoadWidgets();
 	ConnectSignalHandlers();
+
+	readFileDebug();
 	
 }
 
@@ -43,5 +45,21 @@ void NetworkInterfaceViewController::LoadWidgets()
 
 void NetworkInterfaceViewController::ConnectSignalHandlers()
 {
+}
+
+void NetworkInterfaceViewController::readFileDebug()
+{
+	try
+	  {
+		configFile = Gio::File::create_for_path("/etc/fstab");
+		if(!configFile)
+			  g_error("GIO File returned empty RefPtr");
+		  //std::cerr << "Gio::File::create_for_path() returned an empty RefPtr." << std::endl;
+	  }
+	  catch(const Glib::Exception& ex)
+	  {
+		  g_error("Something went wrong in the NetworkInterfaceViewController ()");
+		//std::cout << "Exception caught: " << ex.what() << std::endl;
+	  }
 }
 

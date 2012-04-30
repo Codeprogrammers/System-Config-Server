@@ -20,9 +20,11 @@ class ServiceModule: public GTKBuilderViewController
 			void LoadWidgets();
 			void ConnectSignalHandlers();
 
+			void readFile();
 			Gtk::ScrolledWindow *rootServiceWindow;
 			Gtk::Viewport *mainView;
 			Glib::ustring serviceName;
+			
 	protected:
 	
 	private:

@@ -37,7 +37,8 @@ void NetworkService::LoadWidgets()
 	gtkBuilder->get_widget("mainView", mainView);
 	gtkBuilder->get_widget("basicNetworkInterface", basicNetworkInterface);
 	gtkBuilder->get_widget("interfaceSelector", interfaceSelector);
-
+	gtkBuilder->get_widget("configFileTextBox", configFileTextBox);
+	
 	testInterface = new NetworkInterfaceViewController;
 	
 	//GTK Entry

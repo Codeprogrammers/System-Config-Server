@@ -47,8 +47,14 @@ public:
 		Glib::ustring *ipV6Prefix;
 
 		gboolean *ipV6Enabled;
-		
 		GList *dnsList;
+
+		//File Objects
+		Glib::RefPtr<Gio::File> configFile;
+		Glib::RefPtr<Gio::FileInputStream> configFileStream;
+
+		//Debug Objects and Functions
+		void readFileDebug();
 protected:
 
 private:

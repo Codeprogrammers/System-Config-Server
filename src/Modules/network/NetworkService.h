@@ -35,6 +35,8 @@ public:
 	Gtk::ComboBox *interfaceSelector;
 	Gtk::Button *applySettings;
 	Gtk::Button *resetSettings;
+
+	Gtk::TextView *configFileTextBox;
 	
 	//Internal Data structures
 	GList networkInterfaces;
