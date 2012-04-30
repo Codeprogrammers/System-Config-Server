@@ -27,8 +27,14 @@ NetworkService::NetworkService()
 	LoadWidgets();
 	ConnectSignalHandlers();
 
+	//This is only on Debian/Ubuntu Dirivs
+	filePath = new Glib::ustring("/etc/network/interfaces");
+	openFile (networkFile, *filePath);
+	
 	testInterface = new NetworkInterfaceViewController();
 	testInterface->ethernetName = new Glib::ustring("eth0");
+
+	//Debug
 }
 
 void NetworkService::LoadWidgets()
@@ -55,5 +61,6 @@ void NetworkService::ConnectSignalHandlers()
 
 void NetworkService::CheezTest()
 {
-	g_message("We haz success Services Connectors!");
+	g_message("We haz readFile.");
+	
 }

@@ -20,7 +20,7 @@ class ServiceModule: public GTKBuilderViewController
 			void LoadWidgets();
 			void ConnectSignalHandlers();
 
-			void readFile(Glib::RefPtr<Gio::File> file,Glib::ustring filePathString);
+			void openFile(Glib::RefPtr<Gio::File> file,Glib::ustring filePathString);
 			Gtk::ScrolledWindow *rootServiceWindow;
 			Gtk::Viewport *mainView;
 			Glib::ustring serviceName;

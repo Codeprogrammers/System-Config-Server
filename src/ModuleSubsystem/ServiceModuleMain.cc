@@ -23,18 +23,19 @@ void ServiceModule::ShowServiceModule()
 	}
 }
 
-void readFile(Glib::RefPtr<Gio::File> file,Glib::ustring filePathString)
+void ServiceModule::openFile(Glib::RefPtr<Gio::File> file,Glib::ustring filePathString)
 {
+	  g_message("Attempt to readFile ServiceModule Main");
 	  try
 	  {
-		file = Gio::File::create_for_path("/etc/fstab");
+		file = Gio::File::create_for_path(filePathString);
 		if(!file)
-			  g_error("GIO File returned empty RefPtr");
+			g_error("Gio::File::create_for_path() returned an empty RefPtr. (ServiceModuleMain)");
 		  //std::cerr << "Gio::File::create_for_path() returned an empty RefPtr." << std::endl;
 	  }
 	  catch(const Glib::Exception& ex)
 	  {
-		  g_error("Something went wrong in the NetworkInterfaceViewController ()");
+		  g_error("Exception caught @ ServiceModuleMain.");
 		//std::cout << "Exception caught: " << ex.what() << std::endl;
 	  }
 }

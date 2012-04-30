@@ -32,14 +32,25 @@ public:
 
 	//Widgets
 	Gtk::ScrolledWindow *basicNetworkInterface;
-	Gtk::ComboBox *interfaceSelector;
 	Gtk::Button *applySettings;
 	Gtk::Button *resetSettings;
 
 	Gtk::TextView *configFileTextBox;
 	
 	//Internal Data structures
+	Gtk::ComboBox *interfaceSelector;
+	Glib::RefPtr<Gtk::ListStore> interfaceSelectorTreeModel;
+	
+
+	//InterfaceSelector Data Structures
+	
 	GList networkInterfaces;
+
+	//File Specific Data
+	Glib::ustring *filePath;
+	Glib::RefPtr<Gio::File> networkFile;
+	Glib::RefPtr<Gio::FileInputStream> networkFileStream;
+
 	
 	//Debug Functions & Widgets
 	NetworkInterfaceViewController *testInterface;
