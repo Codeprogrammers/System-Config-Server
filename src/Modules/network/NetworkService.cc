@@ -44,8 +44,6 @@ void NetworkService::LoadWidgets()
 	//GTK Entry
 
 	//GTK Buttons
-	gtkBuilder->get_widget("applySettings", applySettings);
-	gtkBuilder->get_widget("resetSettings", resetSettings);
 
 	basicNetworkInterface->remove();
 	basicNetworkInterface->add(*testInterface->mainView);

@@ -1,13 +1,13 @@
 
 [Anjuta]
-Geometry=1345x931+543+73
+Geometry=1345x931+199+69
 
 [Project Manager]
 Shortcut=System-Config-Server//src//system_config_server
 Expand=System-Config-Server%%%System-Config-Server//src%%%System-Config-Server//src//ui%%%System-Config-Server//system_config_serverdoc%%%System-Config-Server//SYSTEM_CONFIG_SERVER
 
 [File Loader]
-Files=../../src/Modules/network/NetworkService.cc#38%%%../../src/Modules/network/NetworkService.h#41%%%../../src/ModuleSubsystem/ServiceModuleMain.h#20%%%../../src/ModuleSubsystem/ServiceModuleMain.cc#1%%%../../src/Modules/network/NetworkServiceViewControllers/NetworkInterfaceViewController.cc#56%%%../../src/Modules/network/NetworkServiceViewControllers/NetworkInterfaceViewController.h#57
+Files=../../src/Modules/network/NetworkService.cc#40%%%../../src/Modules/network/NetworkService.h#39%%%../../src/ModuleSubsystem/ServiceModuleMain.h#20%%%../../src/ModuleSubsystem/ServiceModuleMain.cc#1%%%../../src/Modules/network/NetworkServiceViewControllers/NetworkInterfaceViewController.cc#56%%%../../src/Modules/network/NetworkServiceViewControllers/NetworkInterfaceViewController.h#57
 
 [Document Manager]
 bookmarks=<?xml version="1.0" encoding="UTF-8"?>\n<bookmarks/>\n

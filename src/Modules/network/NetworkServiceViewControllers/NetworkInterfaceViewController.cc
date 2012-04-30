@@ -39,8 +39,8 @@ void NetworkInterfaceViewController::LoadWidgets()
 	gtkBuilder->get_widget("mainView", mainView);
 	gtkBuilder->get_widget("ipV4TextBox", ipV4TextBox);
 	gtkBuilder->get_widget("subnetTextBox", subnetTextBox);
-	gtkBuilder->get_widget("ipV6Address", ipV6TextBox);
-	gtkBuilder->get_widget("ipV6Prefix", ipV6PrefixTextBox);
+	gtkBuilder->get_widget("ipV6TextBox", ipV6TextBox);
+	gtkBuilder->get_widget("ipV6PrefixTextBox", ipV6PrefixTextBox);
 }
 
 void NetworkInterfaceViewController::ConnectSignalHandlers()
